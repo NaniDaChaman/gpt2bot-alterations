@@ -18,7 +18,7 @@ generation_pipeline=None
 ranker_dict=None
 turns = []
 
-if __name__ == '__main__':
+def main():
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
         '--type',
@@ -29,12 +29,13 @@ if __name__ == '__main__':
     arg_parser.add_argument(
         '--config',
         type=str,
-        default='configs/medium-cpu.cfg',
+        default='my_chatbot.cfg',
         help="Path to the config"
     )
     args = arg_parser.parse_args()
     config_path = args.config#string is the pfile path of my_config.cfg and can be set manually
     config = parse_config(config_path)
+    initialize(**config)
  
 def start_message():
     print("Bot:",
@@ -97,7 +98,7 @@ def initialize(**kwargs):
     start_message()
 
 #if args.type == 'console':
-initialize(**config)
+#initialize(**config)
 
 def bot_response(prompt) :
 
