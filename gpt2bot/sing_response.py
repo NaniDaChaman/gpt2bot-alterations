@@ -41,7 +41,7 @@ def start_message():
     print("Bot:",
           "Just start texting me. "
           "If I'm getting annoying, type \"/reset\". "
-          "To quit the chat, press Ctrl-C.")
+          )
 
 
 def reset_message():
@@ -129,7 +129,7 @@ def bot_response(prompt) :
             reset_message()
             turns = []
             #continue
-        if prompt.startswith('/'):
+        elif prompt.startswith('/'):
             print('Command not recognized.')
             #continue
         # A single turn is a group of user messages and bot responses right after
