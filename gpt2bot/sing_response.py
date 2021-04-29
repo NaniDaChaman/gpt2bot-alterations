@@ -18,25 +18,25 @@ generation_pipeline=None
 ranker_dict=None
 turns = []
 
-def main():
-    arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument(
-        '--type',
-        type=str,
-        default='telegram',
-        help="Type of the conversation to run: telegram, console or dialogue"
-    )
-    arg_parser.add_argument(
-        '--config',
-        type=str,
-        default='my_chatbot.cfg',
-        help="Path to the config"
-    )
-    args = arg_parser.parse_args()
-    config_path = args.config#string is the pfile path of my_config.cfg and can be set manually
-    config = parse_config(config_path)
-    initialize(**config)
- 
+#def main():
+arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument(
+    '--type',
+    type=str,
+    default='telegram',
+    help="Type of the conversation to run: telegram, console or dialogue"
+)
+arg_parser.add_argument(
+    '--config',
+    type=str,
+    default='my_chatbot.cfg',
+    help="Path to the config"
+)
+args = arg_parser.parse_args()
+config_path = args.config#string is the pfile path of my_config.cfg and can be set manually
+config = parse_config(config_path)
+
+
 def start_message():
     print("Bot:",
           "Just start texting me. "
@@ -98,7 +98,7 @@ def initialize(**kwargs):
     start_message()
 
 #if args.type == 'console':
-#initialize(**config)
+initialize(**config)
 
 def bot_response(prompt) :
 
